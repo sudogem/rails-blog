@@ -1,0 +1,14 @@
+<h1>Edit Article</h1>
+
+<p id="notice"><%= alert %></p>
+
+<%= form_tag(:controller => "article", :action => "save") do %>
+  <label>Title</label> </br>
+  <%= text_field_tag(:title, @article.title) %> </br>
+  
+  <label>Body</label> </br>
+  <%= text_area_tag(:body, @article.body, :size => "44x6") %><br /> 
+  
+  <%= submit_tag("Save") %>
+  <%= link_to '<<Back to Home', welcome_index_path %>  
+<% end %>
