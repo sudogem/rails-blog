@@ -1,14 +1,21 @@
 <h1>Edit Article</h1>
+<p id="notice"><%= notice %></p>
 
-<p id="notice"><%= alert %></p>
+<%= form_for @article, url: {action: "update"}, method: "put" do |f| %>
+  <% if @article.errors.any? %>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
 
-<%= form_tag(:controller => "article", :action => "save") do %>
-  <label>Title</label> </br>
-  <%= text_field_tag(:title, @article.title) %> </br>
-  
-  <label>Body</label> </br>
-  <%= text_area_tag(:body, @article.body, :size => "44x6") %><br /> 
-  
-  <%= submit_tag("Save") %>
-  <%= link_to '<<Back to Home', welcome_index_path %>  
+  <label>Title</label><br>
+  <%= f.text_field :title %><br>
+  <label>Body</label><br>
+  <%= f.text_area :body, size: "60x12" %><br>
+  <%= f.hidden_field(:id, :value=>@article.id) %><br>
+  <%= f.submit "Update" %>
+
+  <%= link_to "<<Back to Home", root_path %>  
 <% end %>

@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   get 'article/add'
-
-  get 'article/edit'
-  
   post 'article/save'
 
-  get 'article/delete'
+  get 'article/edit'
+  put 'article/update'
 
+  get 'article/delete'
   get 'welcome/index'
 
   root 'welcome#index'

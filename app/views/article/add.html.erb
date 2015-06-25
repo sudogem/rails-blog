@@ -1,16 +1,22 @@
-<h1>Add Article</h1>
 
-<p id="notice"><%= alert %></p>
+  <h1>Add Article</h1>
+  <p id="notice"><%= notice %></p>
 
-  
-<%= form_tag(:controller => "article", :action => "save", :method => "post") do %>
-  <label>Title</label> </br>
-  <%= text_field_tag(:title) %> </br>
-  
-  <label>Body</label> </br>
-  <%= text_area_tag(:body, "", :size => "44x6") %><br /> 
-  
-  <%= submit_tag("Save") %>
-  
-  <%= link_to 'Back to Home', welcome_index_path %>
-<% end %>
+  <%= form_for @article, url: {action: "save"}, method: "post" do |f| %>
+    <% if @article.errors.any? %>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
+    <label>Title</label><br>
+    <%= f.text_field :title %><br>
+    
+    <label>Body</label><br>
+    <%= f.text_area :body, size: "60x12" %><br>
+
+    <%= f.submit "Save" %>
+    <%= link_to "<<Back to Home", root_path %>  
+  <% end %>
