@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <h1><%= @message %></h1>
+  <% @articles.each do |article| %>
+  <div class="article">
+    <em>Posted <%= time_ago_in_words(article.created_at) %> ago</em>
+    <h5><%= article.title %></h5>
+    <p><%= article.body %></p>
+    <ul class="cmdNav">
+      <li><%= link_to 'Edit', action: "edit", controller: "article", id: article.id %></li>
+      <li><%= link_to 'Delete', action: "delete", controller: "article", id: article.id %></li>
+    </ul>
+  </div>
+  <% end %>
+</div>

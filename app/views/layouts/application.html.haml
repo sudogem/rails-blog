@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Blog
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css', media: 'all'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons', media: 'all'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    #content
+      .z-depth-2
+        %nav
+          .nav-wrapper
+            %a.brand-logo{:href => "/"} &nbsp;Rails4Blog
+            %ul#nav-mobile.right.hide-on-med-and-down
+              %li= link_to 'Add Article', article_add_path
+              %li
+                %a{:href => "/logout"} Logout
+        = yield
+  = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'

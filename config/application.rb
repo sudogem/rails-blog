@@ -22,6 +22,11 @@ module Blog
     
     
     config.log_level = :debug
-    
+
+    # disable the .field_with_errors error class so that it wont break the materialize form style
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+      html_tag
+    }
+  
   end
 end

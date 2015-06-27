@@ -5,8 +5,6 @@
 
 body
 {
-  font-family: tahoma, sans-serif;
-  font-size: 18px;
   background-color: #eee;
   width: 100%;
   color: #333;
@@ -19,12 +17,28 @@ body
   width: 800px;
   margin: 0 auto; 
   text-align: left;
+  background:#fff;
+}
+
+.wrapper {
+  padding:10px;
+
 }
 
 .article
 {
-  padding: 5px 20px 5px 20px;
+  padding: 5px 0px 5px 0px;
   background-color: #ffffff;
   margin: 20px 0 20px 0;
   color: #000000;
 } 
+
+em {
+  font-size:11px;
+  float:right;
+}
+
+.cmdNav li {
+  display: inline;
+  margin-right: 20px;
+}

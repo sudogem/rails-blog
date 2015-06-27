@@ -19,7 +19,7 @@
       @article = Article.create(title: params[:article][:title], body: params[:article][:body])
       respond_to do |format|
         if @article.save
-          format.html { redirect_to url_for(:action => "add", :controller => "articles"), notice: 'Successfully saved.' }
+          format.html { redirect_to url_for(:action => "add", :controller => "article"), notice: 'Successfully saved.' }
           # format.html { redirect_to article_add_path, alert: 'Successfully save.' } ## using this wont re-populate the form
         else
           format.html { render action: "add" }
@@ -36,14 +36,19 @@
          format.html { redirect_to url_for(:action => "edit", :controller => "article", :id => @article.id), notice: 'Successfully updated.' }
         else
           format.html { render action: "edit" }
-        end  
-      end  
+        end
+      end
     end
 
     def view
     end
 
     def delete
+      @article = Article.find(params[:id])
+      @article.destroy
+      respond_to do |format|
+        format.html { redirect_to root_path }
+      end
     end
 
     private
@@ -52,5 +57,3 @@
       end
 
   end
-
-
