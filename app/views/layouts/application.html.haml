@@ -14,8 +14,8 @@
           .nav-wrapper
             %a.brand-logo{:href => "/"} &nbsp;Rails4Blog
             %ul#nav-mobile.right.hide-on-med-and-down
+              %li= link_to 'Login', auth_login_path
               %li= link_to 'Add Article', article_add_path
-              %li
-                %a{:href => "/logout"} Logout
+
         = yield
   = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'

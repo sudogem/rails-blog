@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'auth/login'
+  post 'auth/dologin'
+  get 'auth/logout'
+
   get 'article/add'
   post 'article/save'
 
