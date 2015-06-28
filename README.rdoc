@@ -1,5 +1,3 @@
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sudogem/rails-blog/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
 == README
 
 Requirements:
