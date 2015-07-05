@@ -46,3 +46,18 @@ em {
 .mid {
   text-align: center;
 }
+
+#error_explanation {
+  border: 2px solid red;
+  padding: 1px 20px;
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  ul li {
+    color: red;
+    list-style: inside none square;
+    margin-bottom: 20px;
+  }  
+}

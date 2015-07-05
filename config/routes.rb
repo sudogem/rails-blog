@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'auth/login'
   post 'auth/dologin'
   get 'auth/logout'
