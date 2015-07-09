@@ -6,12 +6,18 @@ Rails 4.1.4
 
 First time setup:
 
+$ git clone --depth=1 https://github.com/sudogem/rails-blog.git
 $ cd rails-blog/
-
 $ bundle install
-
 $ bundle exec rake db:create db:migrate ##it will create a mysql database and then migrate.
-
 $ rails server -p 3001
+NOTE: By default, the default server is WEBrick. You can change it with different rails server such as Thin server.
 
-##By default, the default server is WEBrick. YOu can change it with different rails server such as Thin server.
+Technology stacks:
+Authentication using Devise
+MaterialCSS
+HAML Templating
+mySQL
+
+
+

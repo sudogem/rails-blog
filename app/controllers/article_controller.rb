@@ -1,5 +1,8 @@
 
   class ArticleController < ApplicationController
+
+    before_action :authenticate_user!
+
     def add
       @article = Article.new
       respond_to do |format|
@@ -19,7 +22,7 @@
       @article = Article.create(title: params[:article][:title], body: params[:article][:body])
       respond_to do |format|
         if @article.save
-          format.html { redirect_to url_for(:action => "add", :controller => "article"), notice: 'Successfully saved.' }
+          format.html { redirect_to url_for(:action => "add", :controller => "article"), alert: 'Successfully saved.' }
           # format.html { redirect_to article_add_path, alert: 'Successfully save.' } ## using this wont re-populate the form
         else
           format.html { render action: "add" }
@@ -33,7 +36,7 @@
         @article.title = params[:article][:title]
         @article.body = params[:article][:body]
         if @article.save
-         format.html { redirect_to url_for(:action => "edit", :controller => "article", :id => @article.id), notice: 'Successfully updated.' }
+         format.html { redirect_to url_for(:action => "edit", :controller => "article", :id => @article.id), alert: 'Successfully updated.' }
         else
           format.html { render action: "edit" }
         end
