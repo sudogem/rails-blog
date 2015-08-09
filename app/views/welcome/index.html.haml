@@ -7,6 +7,6 @@
       %h5= article.title
       %p= article.body
       %ul.cmdNav
-        - if user_signed_in?
+        - if current_user
           %li= link_to 'Edit', action: "edit", controller: "article", id: article.id
           %li= link_to 'Delete', action: "delete", controller: "article", id: article.id

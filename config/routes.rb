@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'auth/login'
-  post 'auth/dologin'
-  get 'auth/logout'
+
+  delete '/logout', to: 'sessions#destroy'
+  get 'login', to: 'auth#login'
+  post 'dologin', to: 'auth#dologin'
+  
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/failure', to: 'sessions#auth_failure'
 
   get 'article/add'
   post 'article/save'

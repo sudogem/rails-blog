@@ -20,6 +20,10 @@ body
   background:#fff;
 }
 
+.maincontent { 
+  padding:20px;
+}
+
 .wrapper {
   padding:10px;
 
@@ -60,4 +64,8 @@ em {
     list-style: inside none square;
     margin-bottom: 20px;
   }  
+}
+
+.new_user {
+  border:1px solid red;
 }

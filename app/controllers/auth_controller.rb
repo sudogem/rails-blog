@@ -6,6 +6,9 @@ class AuthController < ApplicationController
     end    
   end
 
+  def dologin
+  end
+  
   def logout
   end
 end
