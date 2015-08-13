@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
-  get 'article/add'
 
-  get 'article/edit'
+  delete '/logout', to: 'sessions#destroy'
+  get 'login', to: 'auth#login'
+  post 'dologin', to: 'auth#dologin'
   
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/failure', to: 'sessions#auth_failure'
+
+  get 'article/add'
   post 'article/save'
 
-  get 'article/delete'
+  get 'article/edit'
+  put 'article/update'
 
+  get 'article/delete'
   get 'welcome/index'
 
   root 'welcome#index'

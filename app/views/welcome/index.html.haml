@@ -1,0 +1,12 @@
+.wrapper
+  %h3.mid= @message
+  - @articles.each do |article|
+    .article
+      %em
+        Posted #{time_ago_in_words(article.created_at)} ago
+      %h5= article.title
+      %p= article.body
+      %ul.cmdNav
+        - if current_user
+          %li= link_to 'Edit', action: "edit", controller: "article", id: article.id
+          %li= link_to 'Delete', action: "delete", controller: "article", id: article.id

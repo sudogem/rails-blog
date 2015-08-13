@@ -11,13 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140705184622) do
+ActiveRecord::Schema.define(version: 20150326143007) do
 
-  create_table "articles", force: true do |t|
-    t.string   "title"
-    t.text     "body"
+  create_table "articles", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "body",       limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "provider",   limit: 255, null: false
+    t.string   "uid",        limit: 255, null: false
+    t.string   "name",       limit: 255
+    t.string   "location",   limit: 255
+    t.string   "image_url",  limit: 255
+    t.string   "url",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true, using: :btree
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
 end
