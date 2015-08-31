@@ -23,7 +23,7 @@
                 %li= link_to 'Sign out', logout_path, method: :delete
               - else
                 %li= link_to 'Login', login_path
-                %li= link_to 'Sign Up', root_path
+                %li= link_to 'Sign Up', signup_path
         .maincontent 
           = yield
   = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'

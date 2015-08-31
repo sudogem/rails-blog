@@ -27,7 +27,7 @@
         else
           format.html { render action: "add" }
         end
-      end 
+      end
     end
 
     def update
