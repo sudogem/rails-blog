@@ -6,6 +6,7 @@ class UserLogin < ActiveRecord::Base
   # attr_accessible doesnt apply anymore in Rails4.x
   # attr_accessible :email, :password, :password_confirmation 
 
+  validates :name, presence: true
   validates :email, presence: true, 
                     length: { minimum: 2 },
                     format: { :with => VALID_EMAIL_REGEX },
