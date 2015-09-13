@@ -35,8 +35,6 @@ class SignupController < ApplicationController
   def register
     email = params[:email]
     password = params[:password]
-    Rails.logger.debug email
-    Rails.logger.debug password
     respond_to do |format|
       format.html
     end

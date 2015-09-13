@@ -1,6 +1,6 @@
 class UserLogin < ActiveRecord::Base
 
- #attr_accessor :password, :email, :password_confirmation
+  attr_accessor :password
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   # attr_accessible doesnt apply anymore in Rails4.x
@@ -15,27 +15,25 @@ class UserLogin < ActiveRecord::Base
                         confirmation: true,
                         length: { minimum: 2 }
 
-  # validates :password_confirmation,  presence: true
+  validates :password_confirmation,  presence: true
 
   before_save :encrypt_password
-  before_save {
-    self.email = email.downcase 
-  }
 
-  def self.authenticate email, password
+  def self.authenticate email, passwd
     u = find_by_email email
-    u && u.authenticated?(password) ? u : nil
+    u && u.authenticated?(passwd) ? u : nil
   end
 
-
+  def authenticated?(passwd)
+    encrypted = encrypt(passwd)
+    password_digest === encrypted
+  end
 
   private
 
-    def encrypt password
-      Rails.logger.debug "=== encrypt ==="
-      Rails.logger.debug password
-      Rails.logger.debug salt
-      Digest::SHA1.hexdigest("--#{salt}--#{password}--")
+    def encrypt passwd
+      require 'digest/sha1'
+      Digest::SHA1.hexdigest("--#{salt}--#{passwd}--")
     end
 
     def encrypt_password
@@ -43,17 +41,11 @@ class UserLogin < ActiveRecord::Base
       if new_record?
         self.salt = Digest::SHA1.hexdigest("--#{Time.now}--#{email}--")
       end
-      Rails.logger.debug "=== encrypt_password ==="
-      # self.password = UserLogin.encrypt password, salt
-      self.password = encrypt password
-      Rails.logger.debug "self.password: "
-      Rails.logger.debug self.password
-    end
-
-    def authenticated?(submitted_password)
-      u = encrypt(submitted_password)
-      Rails.logger.debug "authenticated?="
-      Rails.logger.debug u
-      password == u
+      Rails.logger.debug '==================================='
+      Rails.logger.debug 'encrypt_password'
+      self.password_digest = encrypt password
+      self.email = email.downcase
+      Rails.logger.debug "self.password: " + self.password_digest.to_s
+      Rails.logger.debug "self.email: " + self.email.to_s
     end
 end

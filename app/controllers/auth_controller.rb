@@ -6,18 +6,22 @@ class AuthController < ApplicationController
   end
 
   def dologin
-    username = params[:username]
-    password = params[:password]
-    u = UserLogin.authenticate(username, password)
-    if u
-      session[:user] = u
-      redirect_to root_path
-    else
+    u = UserLogin.authenticate(params[:username], params[:password])
+    if u.nil?
       flash[:notice] = 'Invalid username/password'
-      render :action => 'login'
+      redirect_to login_path
+    end
+
+    if u
+      session[:user] = {id: u.id, image_url: u.image_url, email: u.email}
+      redirect_to root_path
     end
   end
-  
+
   def logout
+    session[:user] = nil
+    session[:thirdparty] = nil
+    session.delete(:user)
+    redirect_to root_path
   end
 end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  delete '/logout', to: 'sessions#destroy'
+  delete 'logout', to: 'auth#logout'
+  get 'logout', to: 'auth#logout'
   get 'login', to: 'auth#login'
   post 'dologin', to: 'auth#dologin'
   
