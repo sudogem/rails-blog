@@ -7,7 +7,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', '0.3.19'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'haml'
+gem 'nokogiri', '~> 1.6.8.rc3'
 
 gem 'devise'
 
