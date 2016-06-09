@@ -119,7 +119,7 @@ GEM
     multipart-post (2.0.0)
     mysql2 (0.3.19-x86-mingw32)
     naught (1.1.0)
-    nokogiri (1.6.8.rc3-x86-mingw32)
+    nokogiri (1.6.8-x86-mingw32)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     oauth (0.5.1)
@@ -257,7 +257,7 @@ DEPENDENCIES
   jquery-rails
   linkedin
   mysql2 (= 0.3.19)
-  nokogiri (~> 1.6.8.rc3)
+  nokogiri
   omniauth
   omniauth-facebook
   omniauth-github
