@@ -5,7 +5,8 @@ ruby '2.0.0'
 ##gem 'rails', '4.1.4' ## requiring active_job/railtie will failed.
 
 gem 'rails', '4.2.0'
-gem 'rails_12factor', group: :production
+# gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '0.3.19'
