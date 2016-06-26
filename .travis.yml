@@ -1,1 +1,4 @@
 language: ruby
+before_script:
+  - mysql -e 'create database blog_test;'
+  - 'rake db:migrate RAILS_ENV=test'
