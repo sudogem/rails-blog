@@ -78,4 +78,5 @@ production:
   database: <%=ENV['OPENSHIFT_APP_NAME']%>
   username: <%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>
   password: <%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>
-  url: <%= "#{ENV['OPENSHIFT_MYSQL_DB_HOST']}:#{ENV['OPENSHIFT_MYSQL_DB_PORT']}" %>
+  host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+  port: <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
