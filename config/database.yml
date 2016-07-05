@@ -68,12 +68,23 @@ test:
 #   %>
 #   url: <%= credentials["uri"] %>
 #   <% end %>
+
+# production:
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 5
+#   database: <%=ENV['OPENSHIFT_APP_NAME']%>
+#   username: <%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>
+#   password: <%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>
+#   host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+#   port: <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
+
+
 production:
   adapter: mysql2
   encoding: utf8
   pool: 5
-  database: <%=ENV['OPENSHIFT_APP_NAME']%>
-  username: <%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>
-  password: <%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>
-  host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
-  port: <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
+  username: root
+  password: webdevel
+  host: localhost
+  database: blog_production

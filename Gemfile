@@ -3,7 +3,12 @@ source 'https://rubygems.org'
 # Not working in travis ci,
 # ruby '2.0.0'
 
+# note: Ruby versions below is not available in ruby-buildpacks(cf-bluemix) but available on Openshift
+# More info https://github.com/cloudfoundry/ruby-buildpack/releases
 ruby '2.1.5'
+
+# ruby '2.1.9'
+# ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 ##gem 'rails', '4.1.4' ## requiring active_job/railtie will failed.

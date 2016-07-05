@@ -3,23 +3,15 @@ before_script:
 - mysql -e 'create database blog_test;'
 script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
-# Deploying to Openshift wont work!! :(
-# deploy:
-#   provider: openshift
-#   user: brainwired@gmail.com
-#   password:
-#     secure: ZmWcLUb8I6FD0fksOC4oTv98SEHJxNZpGNUakfSgebQ8VPyp4pjtIScoYq5p+r5xkAP7xeX/RFeUnH/kgmRMvjSc84Fyn7Izoo9TUqfBLhlWR/8Wu8aDX/srsaufKiN509oDdYfajjAt2noEa7GIaw+tlP9nyE8TN8x0BaZWXAuCwq6R5Hr/mRfzJtHJSnX0IbrsPTdQnLSqZRX2xfA0OiFrgiWG67RFZT9ZlgpVx++vSrtD5YLt5IR54e1TY2tVSlm4aGA53feQRNlSJi6IltUDWn9pPJ6CqV8aoXvS4FMkkbXJ3LzF+3Zz5lJJg0s3NPABH/kvoxdX8VL6RZYzWp5x50g9ZRdr95vPVS8v1Mtw2GnE5zmZXn/KAB1nACam4uWAMcDvvT3peOgfuRXwfpAh2VLmAaBBnW9zUzI+oTZ2Qev8IgEtB1q8Rz57VS9+39ktNCs4cDRn8x35Fi7uU1XqyBBRgqdAqL/Ufaeh/JiXwLERAx5VpaDgr12A/qKbXeXHRcGMM+GpPiWqqs8jtl3NWPzU64KPO7EC2K3H4Z+fVdwLg3P+Qkj9ruRtFQnNp012FRykkx3vN8vycqDUbd5P7dQzC9GCxOoqLJgnfuMdav9Ynmx401MFxUYJrDhOtoUp2KrNWAZEN83lSbOKCeHpcma0FQPvQ21jC66axhU=
-#   app: railsblog
-#   domain: openshift.redhat.com
-#   on:
-#     repo: sudogem/rails-blog
+notifications:
+  slack: pragmaticprogrammers:vPa5atxnsbHS6dTEuAAsnSxy
 deploy:
   provider: cloudfoundry
   api: https://api.ng.bluemix.net
-  username: nurv7project@gmail.com
+  username: d3v0ps00001@gmail.com
   password:
-    secure: uRAQRPTXPyZcQKbcQmVsP8wCB0+7lggd0d7zUiLWDVzd+71N9TanKEYBhKOqn/QTVyIGDVm2pZ3YQbSpL8oXHeh758qfOqf3hXbo3TRSLGKMLpTHKfG/5cgDuxVtt+r3gQwXCKYGrghs6IscVh5qRJxd8/fw7vjLULrLZT3aUSYXrTXvKXDD2DXKloCDY1w5xmY0xKzzWQ7n0j+/Ys45OXC5IKhT+OqWm8vYyKjrOgKzk7coqgRweSRcBif0MCPhvUFuAsHQZP97zoqW2C1ApOj7/Hmca11+2coHeNKT6qUEB9RwkUoCCfu4hcWzQmk87HsA4zK5WAAXWldV2nDYbI4yNFs5EfAIA5tiFa2ikNOr7YmJvDbRvv48zU//M0Evexi9Mt75utDQHA1bSLe0Wp5PRxtRn9c3jFy8N5W7x/pqj3txW5HgXPOL6HZACZ0Jfoq8heCe1PDjM5bGadm1G+Zu+F7EQtNEGbwzijpOdKbYDXfOP6MjzrX03koLFz02U1HB+lLcWEjihXPMW2mNIcznQUMbd14EDr4g+ZLAwd4v5MocYzRYFVpgwAQaPjgERaAy5tat3pEU70jle0iAg/cQDiI3FobcPrGb5dI7SLAAJ9PGnzT7AsKiHjdRjVwpz0Di5Uhb9y9YE8dznEcIIXmZYw/T54npVj4uwtFoSwM=
-  organization: testprj001
-  space: rails_space
+    secure: U2+fEV9V6Zx2ns1PzaACOIPdJZwyFLgoHN+Ud/cTVP6Xd3NmHcdAkxJ10j22JJWQtF5Bv3kxJwZa99Ch8SaONNHcSLz/ST1bRdQW/LVXgdfio5DNelpN71Ide/W5qWFw00f5uShC/uVgSZXs1PP8YTtjSae5YXdwp6NQwIVNpfFrcGE+tOqQ43VQUvO4TkrmMP6ZvQ2O3JzH5hFLXqHHeJUMN2Ku5iBMqt6QNopaR6TnZ9Oty6vA8k48J4PGTFQCAhZRn82nCYvW8MhQYQ9HOcolgpI4YEBAQgqHlAUTZGmE4i1nExYfigSi5XCcpojfN1itIBc7lX11/qWx8ruzWtOvACA2I1y32+NBlIDBe0nqVu5QHWmXinLn6pZLpeHlVpTET54NUgbYVFDLDb5nP0cJztNudw9ShNtp86dmYV7I84kq3BfXWHwHF0reDvrAaoly+goRKYNBzBScu7EG2lBXLRPhVkfq6OFe3WJHB9gJs2URAq73WwjVL/SmO6zC7zbPRSbWBoeVrr7dWr+fWmVKavEYOyTNc9H2cqI0+xnlehraE25md80lFoL4cmgmtQbukFdSxPvO0Rl/csAduPrOuulnfYGEjrOrZvbwMLXVCAu1KhZahmJVQ4EQ4GYDpQsU5Umb0AWQc4TtFT2nbBuw6/Srwr7MTzRRNNJ1sjE=
+  organization: nurv7project
+  space: rorspace
   on:
     repo: sudogem/rails-blog

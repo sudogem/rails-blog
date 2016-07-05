@@ -10,6 +10,6 @@ applications:
   path: .
   stack: cflinuxfs2
   buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
-  command: bundle exec rake db:migrate && bundle exec rails s -p $VCAP_APP_PORT
+  command: bundle exec rake db:create db:migrate && bundle exec rails s -p $VCAP_APP_PORT
   services:
     - cleardb
