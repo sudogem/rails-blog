@@ -238,7 +238,7 @@ GEM
       simple_oauth (~> 0.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2016.5)
+    tzinfo-data (1.2016.6)
       tzinfo (>= 1.0.0)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
@@ -262,7 +262,7 @@ DEPENDENCIES
   jquery-rails
   linkedin
   mysql2 (= 0.3.19)
-  nokogiri
+  nokogiri (= 1.6.8)
   omniauth
   omniauth-facebook
   omniauth-github
