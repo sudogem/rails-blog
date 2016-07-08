@@ -4,7 +4,7 @@ declared-services:
     label: ClearDB MySQL Database-td
     plan: cleardb
 applications:
-- name: rails-blog
+- name: railsblog101
   memory: 64M
   instances: 1
   path: .
