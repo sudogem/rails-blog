@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 # note: Ruby versions below is not available in ruby-buildpacks(cf-bluemix) but available on Openshift
 # More info https://github.com/cloudfoundry/ruby-buildpack/releases
 # ruby '2.1.5'
-ruby '2.1.8'
+ruby '2.1.5'
 
 # ruby '2.1.9'
 # ruby '2.3.0'
