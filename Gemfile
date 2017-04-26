@@ -5,10 +5,10 @@ source 'https://rubygems.org'
 
 # note: Ruby versions below is not available in ruby-buildpacks(cf-bluemix) but available on Openshift
 # More info https://github.com/cloudfoundry/ruby-buildpack/releases
-ruby '2.1.5'
+# ruby '2.1.5'
 
 # note: Not available in rbenv
-# ruby '2.1.9' 
+# ruby '2.1.9'
 
 # ruby '2.1.9'
 # ruby '2.3.0'
@@ -21,7 +21,7 @@ gem 'rails', '4.2.0'
 gem 'rails_12factor'
 
 # Use mysql as the database for Active Record
-gem 'mysql2', '0.3.19'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
