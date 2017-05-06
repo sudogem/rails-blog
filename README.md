@@ -7,13 +7,23 @@ A simple blog application built using Ruby on Rails framework.
   * Articles
 
 #### Requirements:   
-Ruby 2.2.2p95 (it works on Ruby 2.0.0)   
+Ruby 2.2.2p95 (it works on the ff: ruby 2.0.0, ruby 2.3.3)   
 Rails 4.2.0   
 MySQL 5.5   
+
+#### Install uru (ruby version manager for Windows)   
+Download uru at https://bitbucket.org/jonforums/uru/wiki/Downloads   
+
+$ uru list
+  215p273     : ruby 2.1.5p273 (2014-11-13 revision 48405) [i386-mingw32]   
+  233p222     : ruby 2.3.3p222 (2016-11-21 revision 56859) [x64-mingw32]   
+$ uru 233p222   
+---> now using ruby 2.3.3-p222 tagged as `233p222`    
 
 #### Installation:   
 $ git clone --depth=1 https://github.com/sudogem/rails-blog.git    
 $ cd rails-blog/    
+$ uru 233p222   
 $ bundle install    
 $ bundle exec rake db:create db:migrate # it will create a mysql db and then execute the migration scripts.    
 $ rails server -p 3001    

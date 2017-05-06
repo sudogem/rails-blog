@@ -37,7 +37,8 @@ test:
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: travis
+  username: root
+  password: webdevel
   host: localhost
   database: rorblog_test
 
