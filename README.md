@@ -27,7 +27,7 @@ $ cd rails-blog/
 $ uru 233p222   
 $ bundle install    
 $ bundle exec rake db:create db:migrate # it will create a mysql db and then execute the migration scripts.    
-$ rails server -p 3001    
+$ rails server -p 3002    
 
 NOTE: By default, the default server is WEBrick. You can change it with different rails server such as Thin server.    
 Make sure that you installed the following requirements such as the rubyinstaller, the gems like rails and bundler.
