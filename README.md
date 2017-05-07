@@ -12,9 +12,10 @@ Rails 4.2.0
 MySQL 5.5   
 
 #### Install uru (ruby version manager for Windows)   
-Download uru at https://bitbucket.org/jonforums/uru/wiki/Downloads   
+Download uru at https://bitbucket.org/jonforums/uru/wiki/Downloads.   
+After you've downloaded uru, you extract it to your local directory C:\    
 
-$ uru list
+$ uru list  <-- # will list all available ruby versions   
   215p273     : ruby 2.1.5p273 (2014-11-13 revision 48405) [i386-mingw32]   
   233p222     : ruby 2.3.3p222 (2016-11-21 revision 56859) [x64-mingw32]   
 $ uru 233p222   
