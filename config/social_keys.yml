@@ -13,11 +13,11 @@ development:
 
   linkedin_key: "75log5tdatsc5w"
   linkedin_secret: "zN33CTRbJm1vNdL2"
-  ## In LinkedIn Developers, add the ff. settings 
+  ## In LinkedIn Developers, add the ff. settings
   ## OAuth2 Authorized Redirect URL: http://localhost:3000/users/auth/linkedin/callback
 
-  google_key: "YOUR_KEY"
-  google_secret: "YOUR_SECRET"
+  google_client_id: "445701717181-i6g2a97b28rpumpgd5cv2ji7jiqtsqdb.apps.googleusercontent.com"
+  google_secret: "FnepNbMXwzE1zJZvS7WAFb-S"
 
 production:
   facebook_key: "YOUR_KEY"
