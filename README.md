@@ -7,7 +7,7 @@ A simple blog application built using Ruby on Rails framework.
   * Articles
 
 #### Requirements:   
-Ruby 2.2.2p95 (it works on the ff: ruby 2.0.0, ruby 2.3.3)   
+Ruby 2.2.2p95 (it works on the ff: ruby 2.0.0, ruby 2.3.3p222[x64-mingw32], ruby 2.2.2p95[i686-linux] )   
 Rails 4.2.0   
 MySQL 5.5   
 
