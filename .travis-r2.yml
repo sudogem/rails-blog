@@ -1,0 +1,17 @@
+language: ruby
+before_script:
+- mysql -e 'create database blog_test;'
+script:
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+notifications:
+  slack: pragmaticprogrammers:vPa5atxnsbHS6dTEuAAsnSxy
+deploy:
+  provider: cloudfoundry
+  api: https://api.ng.bluemix.net
+  username: d3v0ps00001@gmail.com
+  password:
+    secure: U2+fEV9V6Zx2ns1PzaACOIPdJZwyFLgoHN+Ud/cTVP6Xd3NmHcdAkxJ10j22JJWQtF5Bv3kxJwZa99Ch8SaONNHcSLz/ST1bRdQW/LVXgdfio5DNelpN71Ide/W5qWFw00f5uShC/uVgSZXs1PP8YTtjSae5YXdwp6NQwIVNpfFrcGE+tOqQ43VQUvO4TkrmMP6ZvQ2O3JzH5hFLXqHHeJUMN2Ku5iBMqt6QNopaR6TnZ9Oty6vA8k48J4PGTFQCAhZRn82nCYvW8MhQYQ9HOcolgpI4YEBAQgqHlAUTZGmE4i1nExYfigSi5XCcpojfN1itIBc7lX11/qWx8ruzWtOvACA2I1y32+NBlIDBe0nqVu5QHWmXinLn6pZLpeHlVpTET54NUgbYVFDLDb5nP0cJztNudw9ShNtp86dmYV7I84kq3BfXWHwHF0reDvrAaoly+goRKYNBzBScu7EG2lBXLRPhVkfq6OFe3WJHB9gJs2URAq73WwjVL/SmO6zC7zbPRSbWBoeVrr7dWr+fWmVKavEYOyTNc9H2cqI0+xnlehraE25md80lFoL4cmgmtQbukFdSxPvO0Rl/csAduPrOuulnfYGEjrOrZvbwMLXVCAu1KhZahmJVQ4EQ4GYDpQsU5Umb0AWQc4TtFT2nbBuw6/Srwr7MTzRRNNJ1sjE=
+  organization: nurv7project
+  space: rorspace
+  on:
+    repo: sudogem/rails-blog
