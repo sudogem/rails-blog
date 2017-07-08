@@ -66,8 +66,14 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
+platforms 'mswin', 'mingw', 'mswin64', 'x64_mingw' do
+  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:jruby, :ruby]
+
 
 # ================================================================================
 # Not working in travis ci,
