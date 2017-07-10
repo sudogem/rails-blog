@@ -2,35 +2,38 @@
 # THIS IS A SAMPLE FOR social_keys.yml which is git-ignored as it should be, because it will have your keys in it.
 # REMEMBER TO COPY THIS FILE TO social_keys.yml AND CHANGE THE KEYS IN THERE TO MATCH YOURS.
 development:
+  ## for BW
   facebook_key: "186562331438905"
   facebook_secret: "e17c5c0e6a31d947e2bcfc9ca1f59ae5"
-
+  ## for N7
   twitter_key: "YuwrW1nXUzHuzjpE451sdLCas"
   twitter_secret: "ZrJsvpZhXg8qhj2xkXsYGjdwcDzv39MlqnfjMTNb0WyU3hXEiC"
 
   github_key: "YOUR_KEY"
   github_secret: "YOUR_SECRET"
 
+  ## for BW
   linkedin_key: "75log5tdatsc5w"
   linkedin_secret: "zN33CTRbJm1vNdL2"
   ## In LinkedIn Developers, add the ff. settings
   ## OAuth2 Authorized Redirect URL: http://localhost:3000/users/auth/linkedin/callback
 
+  ## for N7
   google_client_id: "445701717181-i6g2a97b28rpumpgd5cv2ji7jiqtsqdb.apps.googleusercontent.com"
   google_secret: "FnepNbMXwzE1zJZvS7WAFb-S"
 
 production:
-  facebook_key: "YOUR_KEY"
-  facebook_secret: "YOUR_SECRET"
+  facebook_key: <%= ENV["FACEBOOK_KEY"] %>
+  facebook_secret: <%= ENV["FACEBOOK_SECRET"] %>
 
-  twitter_key: "YOUR_KEY"
-  twitter_secret: "YOUR_SECRET"
+  twitter_key: <%= ENV["TWITTER_KEY"] %>
+  twitter_secret: <%= ENV["TWITTER_SECRET"] %>
 
   github_key: "YOUR_KEY"
   github_secret: "YOUR_SECRET"
 
-  linkedin_key: "YOUR_KEY"
-  linkedin_secret: "YOUR_SECRET"
+  linkedin_key: <%= ENV["LINKEDIN_KEY"] %>
+  linkedin_secret: <%= ENV["LINKEDIN_SECRET"] %>
 
-  google_key: "YOUR_KEY"
-  google_secret: "YOUR_SECRET"
+  google_client_id: <%= ENV["GOOGLE_CLIENT_ID"] %>
+  google_secret: <%= ENV["GOOGLE_SECRET"] %>
