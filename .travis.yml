@@ -1,6 +1,6 @@
 language: ruby
 before_script:
-- mysql -e 'create database blog_test;'
+- mysql -e 'create database rorblog_test;'
 script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 notifications:

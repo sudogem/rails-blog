@@ -10,36 +10,31 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   pool: 5
-  username: root
+  username: postgres
   password: webdevel
-  host: localhost
-
-# development:
-#   <<: *default
-#   database: blog_development
+  host: <%= ENV['DOCKER_HOST_IP'] || 'localhost' %>
 
 development:
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: root
-  password: webdevel
-  host: localhost
+  <<: *default
   database: rorblog_development
+
+# development:
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 5
+#   username: root
+#   password: webdevel
+#   host: localhost
+#   database: rorblog_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: root
-  password: webdevel
-  host: localhost
+  <<: *default
   database: rorblog_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -60,16 +55,28 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-production:
-  <% if ENV['VCAP_SERVICES'] %>
-  <%
-    services = JSON.parse(ENV['VCAP_SERVICES'])
-    cleardb = services["cleardb"]
-    credentials = cleardb.first["credentials"]
-  %>
-  url: <%= credentials["uri"] %>
-  <% end %>
 
+# For Heroku
+production:
+  <<: *default
+  username: <%= ENV['HEROKU_POSTGRES_DB_USERNAME'] %>
+  password: <%= ENV['HEROKU_POSTGRES_DB_PASSWORD'] %>
+  database: <%= ENV['HEROKU_POSTGRES_DB_DBNAME'] %>
+  host: <%= ENV['HEROKU_POSTGRES_DB_HOSTNAME'] %>
+  port: <%= ENV['HEROKU_POSTGRES_DB_PORT'] %>
+
+# For IBM Bluemix
+# production:
+#   <% if ENV['VCAP_SERVICES'] %>
+#   <%
+#     services = JSON.parse(ENV['VCAP_SERVICES'])
+#     cleardb = services["cleardb"]
+#     credentials = cleardb.first["credentials"]
+#   %>
+#   url: <%= credentials["uri"] %>
+#   <% end %>
+
+# For OpenShift
 # production:
 #   adapter: mysql2
 #   encoding: utf8
@@ -79,13 +86,3 @@ production:
 #   password: <%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>
 #   host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
 #   port: <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
-
-
-# production:
-#   adapter: mysql2
-#   encoding: utf8
-#   pool: 5
-#   username: root
-#   password: webdevel
-#   host: localhost
-#   database: blog_production

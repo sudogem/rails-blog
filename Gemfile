@@ -5,17 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# ruby '2.3.3'
+ruby '2.3.3'
 
-# Heroku gems
+# Required gems for Heroku deployment
 gem 'rails_12factor', group: :production
 
-gem 'haml', '~> 5.0.1'
-gem 'devise', '~> 4.3.0'
-
+gem 'rails_12factor'
+gem 'haml'
+gem 'devise'
 gem 'linkedin'
 gem 'omniauth'
-gem 'omniauth-oauth2', '~> 1.3.1'
+gem 'omniauth-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
@@ -23,14 +23,27 @@ gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-twitter'
 gem 'twitter'
 
+# For local dev
+# gem 'haml', '~> 5.0.1'
+# gem 'devise', '~> 4.3.0'
+# gem 'linkedin'
+# gem 'omniauth'
+# gem 'omniauth-oauth2', '~> 1.3.1'
+# gem 'omniauth-facebook'
+# gem 'omniauth-github'
+# gem 'omniauth-google-oauth2'
+# gem 'omniauth-linkedin-oauth2'
+# gem 'omniauth-twitter'
+# gem 'twitter'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
 
-# Note: Heroku dont support sqlite3 so lets comment it and use postgres
+# Note: Heroku dont support sqlite3 so lets comment it out and use postgres
 # gem 'sqlite3'
 gem 'pg', '~> 0.21.0'
 
-gem 'mysql2', '~> 0.3.20'
+# gem 'mysql2', '~> 0.3.20'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
