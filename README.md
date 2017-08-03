@@ -56,5 +56,16 @@ $ bundle exec rake assets:precompile RAILS_ENV=production
 * rails 4 (http://rubyonrails.org)    
 * jquery-rails (https://github.com/rails/jquery-rails)    
 
+#### Screenshots:
+Demo account   
+account: user@mail.com   
+pass: test   
+
+![Home (default)](/screenshots/home-default.png)   
+
+![Home (default)](/screenshots/add-article.png)   
+
+
+
 #### Developer
 rails-blog &copy; 2015 Arman Ortega. Released under the MIT License.     
