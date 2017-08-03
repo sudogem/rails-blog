@@ -8,5 +8,5 @@
       %p= h(article.body).gsub("\n", "<br>").html_safe
       %ul.cmdNav
         - if current_user
-          %li= link_to 'Edit', action: "edit", controller: "article", id: article.id
-          %li= link_to 'Delete', action: "delete", controller: "article", id: article.id
+          %li= link_to 'Edit', {action: "edit", controller: 'article', id: article.id}, {class: 'btn waves-effect waves-light'}
+          %li= link_to 'Delete', {action: "delete", controller: "article", id: article.id}, {class: 'btn waves-effect waves-light'}
