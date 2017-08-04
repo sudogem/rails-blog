@@ -44,7 +44,7 @@ em {
 
 .cmdNav li {
   display: inline;
-  margin-right: 20px;
+  margin-right: 0.2em;
 }
 
 .mid {
@@ -70,6 +70,9 @@ em {
   border:1px solid red;
 }
 
+.txtcolor-white {
+  color: #fff !important;
+}
 /* Buttons */
 .btn-danger {
   background: red !important;
