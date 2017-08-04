@@ -9,4 +9,4 @@
       %ul.cmdNav
         - if current_user
           %li= link_to 'Edit', {action: "edit", controller: 'article', id: article.id}, {class: 'btn waves-effect waves-light'}
-          %li= link_to 'Delete', {action: "delete", controller: "article", id: article.id}, {class: 'btn waves-effect waves-light'}
+          %li= link_to 'Delete', {action: "delete", controller: "article", id: article.id}, {class: 'btn btn-danger waves-effect waves-light'}

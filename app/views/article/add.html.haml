@@ -1,5 +1,5 @@
 .wrapper
-  %h1 Add Article
+  %h3 Add Article
   %p#notice= alert
   = form_for @article, url: {action: "save"}, method: "post" do |f|
     - if @article.errors.any?
@@ -20,4 +20,4 @@
     %button.btn.waves-effect.waves-light{:name => "action", :type => "submit"}
       Save
       %i.large.material-icons play_circle_outline
-    = link_to "<<Back to Home", root_path, :class => 'btn waves-effect waves-light'
+    = link_to "<<Back to Home", root_path, :class => 'btn btn-cancel waves-effect waves-light'
