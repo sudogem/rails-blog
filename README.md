@@ -61,9 +61,11 @@ Demo account
 account: user@mail.com   
 pass: test   
 
+![Login page](/screenshots/login-page.png)   
+
 ![Home (default)](/screenshots/home-default.png)   
 
-![Home (default)](/screenshots/add-article.png)   
+![Add post page](/screenshots/add-article.png)   
 
 #### Developer
 rails-blog &copy; 2015 Arman Ortega. Released under the MIT License.     

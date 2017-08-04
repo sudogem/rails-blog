@@ -10,7 +10,6 @@ ruby '2.3.3'
 # Required gems for Heroku deployment
 gem 'rails_12factor', group: :production
 
-gem 'rails_12factor'
 gem 'haml'
 gem 'devise'
 gem 'linkedin'
