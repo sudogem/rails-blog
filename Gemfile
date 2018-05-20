@@ -86,7 +86,7 @@ platforms 'mswin', 'mingw', 'mswin64', 'x64_mingw' do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:jruby, :ruby]
+# gem 'tzinfo-data', platforms: [:jruby, :ruby]
 
 
 # ================================================================================
