@@ -18,7 +18,8 @@
     end
 
     def save
-      @article = Article.create(title: params[:article][:title], body: params[:article][:body])
+      # @article = Article.create(title: params[:article][:title], body: params[:article][:body])
+      @article = Article.create(params[:article])
       respond_to do |format|
         if @article.save
           format.html { redirect_to url_for(:action => "add", :controller => "article"), alert: 'Successfully saved.' }
@@ -32,13 +33,19 @@
     def update
       @article = Article.find_by_id params[:article][:id]
       respond_to do |format|
-        @article.title = params[:article][:title]
-        @article.body = params[:article][:body]
-        if @article.save
-         format.html { redirect_to url_for(:action => "edit", :controller => "article", :id => @article.id), alert: 'Successfully updated.' }
+        if @article.update!(article_params)
+          format.html { redirect_to url_for(:action => "edit", :controller => "article", :id => @article.id), alert: 'Successfully updated.' }
         else
           format.html { render action: "edit" }
         end
+        # it works
+        # @article.title = params[:article][:title]
+        # @article.body = params[:article][:body]
+        # if @article.save
+        #  format.html { redirect_to url_for(:action => "edit", :controller => "article", :id => @article.id), alert: 'Successfully updated.' }
+        # else
+        #   format.html { render action: "edit" }
+        # end
       end
     end
 
@@ -56,6 +63,7 @@
     private
       def article_params
         params.require(:article).permit(:title, :body)
+        # params.require(:article).permit(:body)
       end
 
   end
