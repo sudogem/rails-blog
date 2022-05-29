@@ -22,6 +22,7 @@ gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem 'jquery-turbolinks'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # For local dev
 # gem 'haml', '~> 5.0.1'
