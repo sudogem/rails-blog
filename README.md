@@ -15,7 +15,8 @@ MySQL 5.5
 Download uru at https://bitbucket.org/jonforums/uru/wiki/Downloads.   
 After you've downloaded uru, you extract it to your local directory C:\    
 
-$ uru list  <-- # will list all available ruby versions   
+
+$ uru list    
   215p273     : ruby 2.1.5p273 (2014-11-13 revision 48405) [i386-mingw32]   
   233p222     : ruby 2.3.3p222 (2016-11-21 revision 56859) [x64-mingw32]   
 $ uru 233p222   
@@ -30,6 +31,9 @@ $ bundle exec rake db:create db:migrate # it will create a mysql db and then exe
 $ rails server -p 3002    
 NOTE: By default, the default server is WEBrick. You can change it with different rails server such as Thin server.    
 Make sure that you installed the following requirements such as the rubyinstaller, the gems like rails and bundler.
+
+#### Install rbenv (ruby version manager for Linux)
+Download rbenv at https://github.com/rbenv/rbenv    
 
 #### Testing
 $ bundle exec rake test

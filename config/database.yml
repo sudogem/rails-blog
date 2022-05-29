@@ -13,9 +13,9 @@ default: &default
   adapter: postgresql
   encoding: utf8
   pool: 5
-  username: postgres
-  password: webdevel
-  host: <%= ENV['DOCKER_HOST_IP'] || 'localhost' %>
+  username: <%= ENV['DATABASE_USER'] || 'postgres' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'password' %>
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
 
 development:
   <<: *default
