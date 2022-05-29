@@ -38,7 +38,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 # gem 'twitter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.7'
+# gem 'rails', '~> 5.0.7' # working as of 5/30/2022
+gem 'rails', '~> 5.2.7'
 
 # Note: Heroku dont support sqlite3 so lets comment it out and use postgres
 # gem 'sqlite3'
