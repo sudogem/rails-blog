@@ -37,7 +37,7 @@ gem 'jquery-turbolinks'
 # gem 'twitter'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.3'
+gem 'rails', '~> 5.0.7'
 
 # Note: Heroku dont support sqlite3 so lets comment it out and use postgres
 # gem 'sqlite3'
