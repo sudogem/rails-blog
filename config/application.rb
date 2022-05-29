@@ -39,6 +39,8 @@ module Blog
       html_tag
     }
 
+    VERSION = '1.0.0'
+
     if !ENV['test'].nil?
       social_keys = File.join(Rails.root, 'config', 'social_keys.yml')
       CONFIG = HashWithIndifferentAccess.new(YAML::load(IO.read(social_keys)))[Rails.env]
