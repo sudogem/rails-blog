@@ -43,7 +43,7 @@ module Blog
       html_tag
     }
 
-    VERSION = '1.0.0'
+    VERSION = '1.0.1'
 
     if !ENV['test'].nil?
       social_keys = File.join(Rails.root, 'config', 'social_keys.yml')
