@@ -43,7 +43,10 @@ gem 'rails', '~> 5.2.7'
 
 # Note: Heroku dont support sqlite3 so lets comment it out and use postgres
 # gem 'sqlite3'
-gem 'pg', '~> 0.21.0'
+
+# Note: Netlify dont support pg so lets comment it out and use neon db
+# gem 'pg', '~> 0.21.0'
+
 
 # gem 'mysql2', '~> 0.3.20'
 
