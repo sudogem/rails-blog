@@ -1,0 +1,7 @@
+{
+  "name": "rails-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "sudo apt-get update && sudo apt-get install -y libpq-dev"
+  }
+}
