@@ -50,8 +50,7 @@ gem 'rails', '~> 7.2.0'
 # gem 'sqlite3'
 
 # Note: Netlify dont support pg so lets comment it out and use neon db
-# gem 'pg', '~> 0.21.0'
-
+gem 'pg'
 
 # gem 'mysql2', '~> 0.3.20'
 
