@@ -171,7 +171,6 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
-    pg (0.21.0)
     public_suffix (4.0.7)
     puma (4.3.12)
       nio4r (~> 2.0)
@@ -294,7 +293,6 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   omniauth-oauth2
   omniauth-twitter
-  pg (~> 0.21.0)
   puma (~> 4.3)
   rails (~> 5.2.7)
   rails_12factor
@@ -306,7 +304,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.7.6p219
+   ruby 3.1.0p0
 
 BUNDLED WITH
    2.3.14
