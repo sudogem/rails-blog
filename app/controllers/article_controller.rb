@@ -18,8 +18,8 @@
     end
 
     def save
-      # @article = Article.create(title: params[:article][:title], body: params[:article][:body])
-      @article = Article.create(params[:article])
+      # @article = Article.create(params[:article]) # not working
+      @article = Article.create(article_params)
       respond_to do |format|
         if @article.save
           format.html { redirect_to url_for(:action => "add", :controller => "article"), alert: 'Successfully saved.' }
