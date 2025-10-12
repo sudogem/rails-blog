@@ -27,6 +27,11 @@ $ git clone --depth=1 https://github.com/sudogem/rails-blog.git
 $ cd rails-blog/    
 $ uru 233p222   
 $ bundle install    
+
+#### Setup environment variables
+Create an .env file (See the .env.sample)
+
+#### Start the app
 $ bundle exec rake db:create db:migrate # it will create a mysql db and then execute the migration scripts.    
 $ rails server -p 3002    
 NOTE: By default, the default server is WEBrick. You can change it with different rails server such as Thin server.    
