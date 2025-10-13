@@ -21,6 +21,9 @@
             %li= link_to 'Cancel',root_path, {class: 'btn-flat btn-cancel waves-effect waves-light modal-close'}
             %li= link_to 'Agree', {action: "delete", controller: "article", id: article.id}, {class: 'btn-flat btn-danger waves-effect waves-light txtcolor-white'}
 
+= Rails.env
+= debug ENV.to_h.to_yaml
+
 <!-- Note: Plugins like modal will be included in the child templates not the main template. -->
 <!-- TurboLinks replaces the body only so when you load a new page, the javascript doesn't get run again. -->
 :javascript
