@@ -37,3 +37,5 @@ bower.json
 
 # environment variables
 .env
+
+/config/credentials/production.key
