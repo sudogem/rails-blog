@@ -5,7 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.7.6'
+# Upgrade ruby from 2.7.6 to 3.1.0 for Render deployment
+# ruby '2.7.6'
+ruby '3.1.0'
 
 # Required gems for Heroku deployment
 gem 'rails_12factor', group: :production
@@ -39,11 +41,16 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'rails', '~> 5.0.7' # working as of 5/30/2022
-gem 'rails', '~> 5.2.7'
+
+# 'rails', '~> 5.2.7' is not working in Ruby 3.1.0
+# gem 'rails', '~> 5.2.7'
+gem 'rails', '~> 7.2.0'
 
 # Note: Heroku dont support sqlite3 so lets comment it out and use postgres
 # gem 'sqlite3'
-gem 'pg', '~> 0.21.0'
+
+# Note: Netlify dont support pg so lets comment it out and use neon db
+gem 'pg'
 
 # gem 'mysql2', '~> 0.3.20'
 

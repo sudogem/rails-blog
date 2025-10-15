@@ -19,7 +19,9 @@ default: &default
 
 development:
   <<: *default
-  database: rorblog_development
+  # url: 'postgresql://neondb_owner:abc_DEF9caw8WXYZ@ep-fancy-dream-ab5abcdefg-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+  # database: rorblog_development
+  url: <%= ENV['DATABASE_URL'] %>
 
 # development:
 #   adapter: mysql2

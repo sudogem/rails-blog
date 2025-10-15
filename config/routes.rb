@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get 'article/delete'
   get 'welcome/index'
 
+  get '/privacy-policy' => 'privacy_policy#index', :as => 'privacy_policy'
+  get '/terms-of-use' => 'terms_of_use#index', :as => 'terms_of_use'
+
+
   root 'welcome#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
